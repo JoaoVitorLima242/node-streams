@@ -23,6 +23,8 @@ http.createServer((req, res) => {
   // res.write(file)
   // res.end()
 
+  // createReadStream separa os arquivos em mais pedacos(chunks) e com o pipe
+  // temos o controlle desses chunks
   createReadStream('big.file').pipe(res)
 }).listen(3000, () => console.log('running 3000'))
 
